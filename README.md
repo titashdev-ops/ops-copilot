@@ -16,3 +16,11 @@ Ops Copilot:
 - Uses AI to explain compliance steps in plain language
 - Assists with documentation and responses
   
+## Demo Workflow
+
+1. User signs up and creates an organization
+2. Compliance requirements are added
+3. System generates structured tasks
+4. AI explains each task in plain language
+5. Deadlines are prioritized based on risk
+6. Subscription plan controls feature access
