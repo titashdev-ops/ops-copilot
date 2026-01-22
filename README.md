@@ -35,7 +35,9 @@ OpenAI API (AI Assistance)
    ↓
 Stripe (Billing)
 ## Architecture
+
 ![Architecture Diagram](./docs/architecture.png)
+
 ## Tech Stack
 
 Frontend:
