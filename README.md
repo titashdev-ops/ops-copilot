@@ -22,6 +22,23 @@ Businesses struggle to track compliance obligations across jurisdictions, freque
 - AI: OpenAI (server-side, cached)
 - Email: Resend
 
+- ## Key Design Decisions
+
+- **Database-driven compliance rules**  
+  Compliance logic is stored entirely in the database, allowing rules to be added, edited, or disabled without redeploying the application.
+
+- **Idempotent task generation**  
+  Compliance tasks are generated in a safe, repeatable manner to prevent duplicate obligations during retries or onboarding restarts.
+
+- **AI cost control**  
+  AI-generated insights are cached per task to avoid repeated OpenAI calls and keep usage predictable.
+
+- **Risk-first UX**  
+  Tasks are grouped and surfaced by risk level so that high-impact deadlines are never buried.
+
+- **Multi-tenant security**  
+  Row Level Security (RLS) enforces strict data isolation between users and organizations.
+
 ## Security & Scalability
 - Row Level Security (RLS) for multi-tenant isolation
 - Server-side authorization for admin and billing logic
