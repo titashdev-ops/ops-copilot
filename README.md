@@ -1,49 +1,68 @@
 # Ops Copilot
 
-Ops Copilot is a production-grade B2B SaaS platform designed to automate regulatory compliance for businesses.
+Ops Copilot is a production-grade B2B SaaS platform that uses AI to automate compliance operations by converting regulatory obligations into prioritized, actionable tasks.
+## Problem
 
-## What Problem It Solves
-Businesses struggle to track compliance obligations across jurisdictions, frequencies, and risk levels. Ops Copilot converts compliance rules into structured tasks, prioritizes high-risk deadlines, and provides AI-assisted guidance to reduce penalties and operational risk.
+Compliance and operational teams often struggle to:
+- Track regulatory deadlines across jurisdictions
+- Prioritize high-risk compliance tasks
+- Manually interpret complex compliance requirements
+- Reduce human error and penalties
 
+These processes are typically manual, fragmented, and inefficient.
+## Solution
+
+Ops Copilot automates compliance operations by:
+- Structuring compliance obligations into tasks
+- Prioritizing tasks based on risk and deadlines
+- Using AI to explain compliance requirements in simple language
+- Assisting teams with draft responses and documentation
 ## Key Features
-- Database-driven compliance rules engine
-- Automated compliance task generation (12-month horizon)
-- Risk-based task prioritization
-- AI-generated task explanations and professional email drafts
-- Stripe subscription billing (Free / Pro)
-- Automated high-risk deadline email reminders
-- Admin dashboard for rule and user management
 
-## Architecture Overview
-- Frontend: React.js + Tailwind CSS
-- Backend: Node.js (Express)
-- Database & Auth: Supabase (Postgres, Row Level Security)
-- Payments: Stripe Subscriptions
-- AI: OpenAI (server-side, cached)
-- Email: Resend
+- AI-assisted compliance task generation
+- Risk-based deadline prioritization
+- Secure multi-tenant architecture using Supabase RLS
+- Role-based access control
+- Stripe-powered subscription billing
+- Audit-friendly task history and documentation
+Frontend (React)
+   ↓
+Backend API (Node.js / Express)
+   ↓
+Supabase (Postgres + RLS)
+   ↓
+OpenAI API (AI Assistance)
+   ↓
+Stripe (Billing)
+## Architecture
+![Architecture Diagram](./docs/architecture.png)
+## Tech Stack
 
-- ## Key Design Decisions
+Frontend:
+- React
+- Tailwind CSS
 
-- **Database-driven compliance rules**  
-  Compliance logic is stored entirely in the database, allowing rules to be added, edited, or disabled without redeploying the application.
+Backend:
+- Node.js
+- Express
 
-- **Idempotent task generation**  
-  Compliance tasks are generated in a safe, repeatable manner to prevent duplicate obligations during retries or onboarding restarts.
+Database & Auth:
+- Supabase (PostgreSQL, Row Level Security)
 
-- **AI cost control**  
-  AI-generated insights are cached per task to avoid repeated OpenAI calls and keep usage predictable.
+AI:
+- OpenAI API (GPT-based task assistance)
 
-- **Risk-first UX**  
-  Tasks are grouped and surfaced by risk level so that high-impact deadlines are never buried.
+Payments:
+- Stripe Subscriptions
+## Example Use Cases
 
-- **Multi-tenant security**  
-  Row Level Security (RLS) enforces strict data isolation between users and organizations.
+- Compliance teams tracking regulatory deadlines
+- SaaS companies managing multi-region compliance
+- Operations teams reducing audit preparation time
+- AI-assisted documentation for regulatory responses
+## Local Setup
 
-## Security & Scalability
-- Row Level Security (RLS) for multi-tenant isolation
-- Server-side authorization for admin and billing logic
-- AI response caching to control API costs
-- Idempotent background jobs to prevent duplicate tasks
-
-## Status
-This is an active, production-oriented SaaS system design and implementation project.
+1. Clone the repository
+2. Install dependencies
+3. Configure environment variables
+4. Start backend and frontend servers
