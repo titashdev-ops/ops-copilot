@@ -66,7 +66,3 @@ Payments:
 2. Install dependencies
 3. Configure environment variables
 4. Start backend and frontend servers
-
-## Architecture
-
-![Architecture Diagram](./docs/architecture.png)
