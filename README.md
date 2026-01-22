@@ -15,4 +15,4 @@ Ops Copilot:
 - Prioritizes tasks by risk and deadlines
 - Uses AI to explain compliance steps in plain language
 - Assists with documentation and responses
-- 
+  
